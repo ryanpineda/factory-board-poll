@@ -1,0 +1,1252 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="dark">
+    <meta name="theme-color" content="#000000">
+    <title>Factory Board Meeting — Q3 2026 Availability</title>
+    <meta
+      name="description"
+      content="Help us pick a new date for the Q3 2026 Factory board meeting. Mark your availability for the preferred windows by Friday, August 28."
+    >
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Geist:wght@300&family=Geist+Mono:wght@400&display=swap"
+      rel="stylesheet"
+    >
+    <style>
+      :root {
+        --black: #000000;
+        --surface: #161413;
+        --border: #342F2D;
+        --gray: #9B8E87;
+        --footer-gray: #948781;
+        --white: #FFFFFF;
+        --orange: #EE6018;
+        --success: #6FAB78;
+        --warning: #F0A330;
+        --error: #D9363E;
+        --display: "Geist", Helvetica, Arial, sans-serif;
+        --mono: "Geist Mono", "SFMono-Regular", Consolas, monospace;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        background: var(--black);
+        scroll-behavior: smooth;
+      }
+
+      body {
+        min-width: 320px;
+        margin: 0;
+        color: var(--white);
+        background:
+          radial-gradient(circle at 1px 1px, rgba(238, 96, 24, 0.18) 1px, transparent 1.5px)
+            right 48px top 48px / 16px 16px no-repeat,
+          var(--black);
+        font-family: var(--display);
+        font-size: 20px;
+        font-weight: 300;
+        letter-spacing: -0.01em;
+        line-height: 1.45;
+      }
+
+      button,
+      input,
+      textarea {
+        font: inherit;
+      }
+
+      button,
+      label,
+      input,
+      textarea {
+        -webkit-tap-highlight-color: transparent;
+      }
+
+      a {
+        color: var(--white);
+        text-underline-offset: 4px;
+      }
+
+      .page {
+        width: min(1240px, calc(100% - 48px));
+        margin: 0 auto;
+        padding: 40px 0 64px;
+      }
+
+      .topbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        min-height: 48px;
+        padding-bottom: 24px;
+        border-bottom: 1px solid var(--border);
+      }
+
+      .wordmark {
+        font-family: var(--mono);
+        font-size: 20px;
+        letter-spacing: -0.04em;
+      }
+
+      .wordmark-mark {
+        color: var(--orange);
+      }
+
+      .security-badge {
+        padding: 6px 10px;
+        border: 1px solid var(--border);
+        border-radius: 999px;
+        color: var(--gray);
+        font-family: var(--mono);
+        font-size: 14px;
+        letter-spacing: -0.01em;
+      }
+
+      .hero {
+        display: grid;
+        grid-template-columns: minmax(0, 1.55fr) minmax(260px, 0.45fr);
+        gap: 64px;
+        padding: 96px 0 80px;
+      }
+
+      .eyebrow,
+      .section-label,
+      .field-label,
+      .slot-sequence,
+      .slot-day,
+      .meta-label,
+      .privacy-copy,
+      .button,
+      .status-copy,
+      .summary-count,
+      .summary-updated {
+        font-family: var(--mono);
+        font-size: 14px;
+        letter-spacing: -0.01em;
+      }
+
+      .eyebrow,
+      .section-label,
+      .slot-sequence,
+      .meta-label {
+        color: var(--orange);
+      }
+
+      h1 {
+        max-width: 900px;
+        margin: 20px 0 24px;
+        font-size: clamp(56px, 7vw, 84px);
+        font-weight: 300;
+        letter-spacing: -0.045em;
+        line-height: 0.98;
+      }
+
+      h2 {
+        margin: 0;
+        font-size: 28px;
+        font-weight: 300;
+        letter-spacing: -0.02em;
+        line-height: 1.15;
+      }
+
+      p {
+        margin: 0;
+      }
+
+      .hero-description {
+        max-width: 720px;
+        color: var(--gray);
+      }
+
+      .hero-meta {
+        align-self: end;
+        border-top: 1px solid var(--orange);
+      }
+
+      .meta-row {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        gap: 16px;
+        padding: 16px 0;
+        border-bottom: 1px solid var(--border);
+      }
+
+      .meta-value {
+        text-align: right;
+      }
+
+      .section-heading {
+        display: flex;
+        align-items: end;
+        justify-content: space-between;
+        gap: 24px;
+        margin-bottom: 24px;
+      }
+
+      .section-description {
+        max-width: 520px;
+        color: var(--gray);
+      }
+
+      .slot-list {
+        display: grid;
+        gap: 12px;
+      }
+
+      .slot-card {
+        display: grid;
+        grid-template-columns: 120px minmax(220px, 1fr) minmax(330px, 0.9fr);
+        min-height: 168px;
+        border: 1px solid var(--border);
+        border-radius: 4px;
+        background: rgba(22, 20, 19, 0.72);
+        transition: border-color 160ms ease, background 160ms ease;
+      }
+
+      .slot-card:focus-within {
+        border-color: var(--orange);
+        background: var(--surface);
+      }
+
+      .slot-index {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 24px;
+        border-right: 1px solid var(--border);
+      }
+
+      .slot-date {
+        align-self: center;
+        padding: 24px 32px;
+      }
+
+      .slot-day {
+        display: block;
+        margin-bottom: 8px;
+        color: var(--gray);
+      }
+
+      .slot-date h2 {
+        font-size: 36px;
+      }
+
+      .slot-time {
+        margin-top: 8px;
+        color: var(--gray);
+      }
+
+      .local-time {
+        min-height: 20px;
+        margin-top: 8px;
+        color: var(--footer-gray);
+        font-family: var(--mono);
+        font-size: 14px;
+      }
+
+      .availability-options {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-self: center;
+        gap: 8px;
+        margin: 24px;
+        padding: 0;
+        border: 0;
+      }
+
+      .availability-options legend {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
+      }
+
+      .choice-input {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        opacity: 0;
+        pointer-events: none;
+      }
+
+      .choice-label {
+        display: flex;
+        min-height: 56px;
+        align-items: center;
+        justify-content: center;
+        padding: 12px 16px;
+        border: 1px solid var(--border);
+        border-radius: 4px;
+        color: var(--gray);
+        cursor: pointer;
+        font-family: var(--mono);
+        font-size: 14px;
+        text-align: center;
+        transition: color 160ms ease, border-color 160ms ease, background 160ms ease;
+      }
+
+      .choice-label:hover {
+        color: var(--white);
+        border-color: var(--gray);
+      }
+
+      .choice-input:focus-visible + .choice-label {
+        outline: 2px solid var(--orange);
+        outline-offset: 2px;
+      }
+
+      .choice-input[value="available"]:checked + .choice-label {
+        color: var(--black);
+        border-color: var(--success);
+        background: var(--success);
+      }
+
+      .choice-input[value="unavailable"]:checked + .choice-label {
+        color: var(--white);
+        border-color: var(--error);
+        background: rgba(217, 54, 62, 0.18);
+      }
+
+      .details-section {
+        display: grid;
+        grid-template-columns: minmax(260px, 0.62fr) minmax(0, 1.38fr);
+        gap: 64px;
+        padding: 96px 0 0;
+      }
+
+      .details-intro {
+        position: sticky;
+        top: 24px;
+        align-self: start;
+      }
+
+      .details-intro h2 {
+        margin: 12px 0 16px;
+      }
+
+      .details-intro p {
+        color: var(--gray);
+      }
+
+      .form-grid {
+        display: grid;
+        gap: 24px;
+      }
+
+      .two-column {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+      }
+
+      .field {
+        display: grid;
+        gap: 8px;
+      }
+
+      .field-label {
+        color: var(--gray);
+      }
+
+      .required {
+        color: var(--orange);
+      }
+
+      input,
+      textarea {
+        width: 100%;
+        min-height: 52px;
+        padding: 12px 14px;
+        border: 1px solid var(--border);
+        border-radius: 4px;
+        outline: none;
+        color: var(--white);
+        background: transparent;
+        font-size: 20px;
+        font-weight: 300;
+        letter-spacing: -0.01em;
+        transition: border-color 160ms ease, background 160ms ease;
+      }
+
+      textarea {
+        min-height: 144px;
+        resize: vertical;
+        line-height: 1.45;
+      }
+
+      input::placeholder,
+      textarea::placeholder {
+        color: var(--footer-gray);
+        opacity: 1;
+      }
+
+      input:focus,
+      textarea:focus {
+        border-color: var(--orange);
+        background: var(--surface);
+      }
+
+      .field-help {
+        color: var(--footer-gray);
+        font-family: var(--mono);
+        font-size: 14px;
+      }
+
+      .privacy-panel {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        gap: 12px;
+        padding: 16px;
+        border: 1px solid var(--border);
+        border-radius: 4px;
+        background: var(--surface);
+      }
+
+      .privacy-mark {
+        color: var(--orange);
+        font-family: var(--mono);
+      }
+
+      .privacy-copy {
+        color: var(--gray);
+        line-height: 1.55;
+      }
+
+      .form-actions {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        padding-top: 8px;
+      }
+
+      .button {
+        min-height: 52px;
+        padding: 14px 20px;
+        border: 1px solid var(--orange);
+        border-radius: 4px;
+        color: var(--black);
+        background: var(--orange);
+        cursor: pointer;
+        text-transform: uppercase;
+        transition: color 160ms ease, background 160ms ease;
+      }
+
+      .button:hover {
+        color: var(--orange);
+        background: var(--black);
+      }
+
+      .button:focus-visible {
+        outline: 2px solid var(--white);
+        outline-offset: 3px;
+      }
+
+      .button:disabled {
+        color: var(--black);
+        border-color: var(--gray);
+        background: var(--gray);
+        cursor: wait;
+      }
+
+      .button-secondary {
+        color: var(--white);
+        border-color: var(--border);
+        background: transparent;
+      }
+
+      .button-secondary:hover {
+        color: var(--white);
+        border-color: var(--gray);
+        background: var(--surface);
+      }
+
+      .status-copy {
+        min-height: 24px;
+        color: var(--gray);
+      }
+
+      .status-copy[data-state="error"] {
+        color: var(--error);
+      }
+
+      .status-copy[data-state="success"] {
+        color: var(--success);
+      }
+
+      .summary-panel {
+        margin-top: 80px;
+        padding: 32px;
+        border: 1px solid var(--border);
+        border-radius: 4px;
+        background: var(--surface);
+      }
+
+      .summary-header {
+        display: flex;
+        align-items: end;
+        justify-content: space-between;
+        gap: 24px;
+        padding-bottom: 24px;
+        border-bottom: 1px solid var(--border);
+      }
+
+      .summary-header p {
+        margin-top: 8px;
+        color: var(--gray);
+      }
+
+      .summary-total {
+        color: var(--orange);
+        font-size: 56px;
+        line-height: 0.9;
+        text-align: right;
+      }
+
+      .summary-updated {
+        margin-top: 8px;
+        color: var(--footer-gray);
+        text-align: right;
+      }
+
+      .summary-list {
+        display: grid;
+        gap: 24px;
+        padding-top: 28px;
+      }
+
+      .summary-row {
+        display: grid;
+        grid-template-columns: minmax(180px, 0.55fr) minmax(220px, 1fr) 100px;
+        gap: 24px;
+        align-items: center;
+      }
+
+      .summary-date {
+        font-size: 20px;
+      }
+
+      .summary-track {
+        height: 10px;
+        border: 1px solid var(--border);
+        background: var(--black);
+      }
+
+      .summary-fill {
+        height: 100%;
+        background: var(--orange);
+        transition: width 500ms ease;
+      }
+
+      .summary-count {
+        color: var(--gray);
+        text-align: right;
+      }
+
+      .closed-panel,
+      .fatal-panel {
+        padding: 48px;
+        border: 1px solid var(--border);
+        border-radius: 4px;
+        background: var(--surface);
+      }
+
+      .closed-panel p,
+      .fatal-panel p {
+        max-width: 700px;
+        margin-top: 16px;
+        color: var(--gray);
+      }
+
+      .site-footer {
+        display: flex;
+        justify-content: space-between;
+        gap: 24px;
+        margin-top: 96px;
+        padding-top: 24px;
+        border-top: 1px solid var(--border);
+        color: var(--footer-gray);
+        font-family: var(--mono);
+        font-size: 14px;
+      }
+
+      [hidden] {
+        display: none;
+      }
+
+      @media (max-width: 900px) {
+        .hero {
+          grid-template-columns: 1fr;
+          gap: 48px;
+          padding: 72px 0 64px;
+        }
+
+        .hero-meta {
+          max-width: 520px;
+        }
+
+        .slot-card {
+          grid-template-columns: 88px 1fr;
+        }
+
+        .slot-index {
+          grid-row: 1 / span 2;
+        }
+
+        .availability-options {
+          grid-column: 2;
+          margin-top: 0;
+        }
+
+        .details-section {
+          grid-template-columns: 1fr;
+          gap: 32px;
+        }
+
+        .details-intro {
+          position: static;
+        }
+      }
+
+      @media (max-width: 640px) {
+        body {
+          background: var(--black);
+        }
+
+        .page {
+          width: min(100% - 32px, 1240px);
+          padding-top: 24px;
+        }
+
+        .security-badge {
+          display: none;
+        }
+
+        .hero {
+          padding-top: 56px;
+        }
+
+        h1 {
+          font-size: 56px;
+        }
+
+        .section-heading,
+        .summary-header,
+        .form-actions,
+        .site-footer {
+          align-items: stretch;
+          flex-direction: column;
+        }
+
+        .slot-card {
+          grid-template-columns: 1fr;
+        }
+
+        .slot-index {
+          flex-direction: row;
+          grid-row: auto;
+          padding: 16px 20px;
+          border-right: 0;
+          border-bottom: 1px solid var(--border);
+        }
+
+        .slot-date {
+          padding: 24px 20px 16px;
+        }
+
+        .availability-options {
+          grid-column: auto;
+          margin: 16px 20px 20px;
+        }
+
+        .details-section {
+          padding-top: 72px;
+        }
+
+        .two-column {
+          grid-template-columns: 1fr;
+        }
+
+        .button {
+          width: 100%;
+        }
+
+        .summary-panel {
+          padding: 24px 20px;
+        }
+
+        .summary-total,
+        .summary-updated {
+          text-align: left;
+        }
+
+        .summary-row {
+          grid-template-columns: 1fr auto;
+          gap: 12px;
+        }
+
+        .summary-track {
+          grid-column: 1 / -1;
+          grid-row: 2;
+        }
+
+        .closed-panel,
+        .fatal-panel {
+          padding: 32px 24px;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        *,
+        *::before,
+        *::after {
+          scroll-behavior: auto;
+          animation-duration: 0.01ms;
+          animation-iteration-count: 1;
+          transition-duration: 0.01ms;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="page" id="app"></main>
+
+    <script>
+      const CONFIG = {
+        cycle: 'Q3 2026',
+        heading: 'Choose a date for the next Factory board meeting.',
+        description:
+          'The Q3 2026 board meeting needs a new date. Mark Available or Unavailable for each preferred window below, and add any other dates that work in the open field. All preferred windows run 2:00–5:00 PM Pacific.',
+        timezone: 'America/Los_Angeles',
+        timezoneLabel: 'Pacific Time',
+        deadlineIso: '2026-08-29T06:59:59Z',
+        deadlineLabel: 'Friday, August 28',
+        slots: [
+          {
+            id: 'nov-13',
+            sequence: 'OPTION 01',
+            dayLabel: 'FRIDAY',
+            shortDate: 'November 13',
+            dateLabel: 'Friday, November 13',
+            timeLabel: '2:00–5:00 PM PT',
+            startIso: '2026-11-13T14:00:00-08:00',
+            endIso: '2026-11-13T17:00:00-08:00',
+            entryId: 'entry.387530209',
+          },
+          {
+            id: 'nov-16',
+            sequence: 'OPTION 02',
+            dayLabel: 'MONDAY',
+            shortDate: 'November 16',
+            dateLabel: 'Monday, November 16',
+            timeLabel: '2:00–5:00 PM PT',
+            startIso: '2026-11-16T14:00:00-08:00',
+            endIso: '2026-11-16T17:00:00-08:00',
+            entryId: 'entry.2067158201',
+          },
+          {
+            id: 'nov-24',
+            sequence: 'OPTION 03',
+            dayLabel: 'TUESDAY',
+            shortDate: 'November 24',
+            dateLabel: 'Tuesday, November 24',
+            timeLabel: '2:00–5:00 PM PT',
+            startIso: '2026-11-24T14:00:00-08:00',
+            endIso: '2026-11-24T17:00:00-08:00',
+            entryId: 'entry.2081910964',
+          },
+        ],
+      };
+
+      const FORM_ACTION =
+        'https://docs.google.com/forms/d/e/1FAIpQLScfPZvxu5wBwYJ3nypVKU-aPS1LgRMtFVWz0M1neBdXtaytPw/formResponse';
+      const ENTRY = {
+        name: 'entry.914366688',
+        email: 'entry.196383799',
+        principal: 'entry.222314193',
+        other: 'entry.982572657',
+        notes: 'entry.877545784',
+      };
+
+      const app = document.getElementById('app');
+      const isClosed = Date.now() > new Date(CONFIG.deadlineIso).getTime();
+      let latestTotals = null;
+
+      renderPage();
+      fetchTotals().then(function (totals) {
+        latestTotals = totals;
+        if (totals && isClosed) {
+          showSummary(false);
+        }
+      });
+
+      function renderPage() {
+        app.innerHTML = `
+          ${renderTopbar()}
+          <section class="hero">
+            <div>
+              <div class="eyebrow">BOARD OPERATIONS / ${escapeHtml(CONFIG.cycle.toUpperCase())}</div>
+              <h1>${escapeHtml(CONFIG.heading)}</h1>
+              <p class="hero-description">${escapeHtml(CONFIG.description)}</p>
+            </div>
+            <div class="hero-meta" aria-label="Poll details">
+              <div class="meta-row">
+                <span class="meta-label">DURATION</span>
+                <span class="meta-value">3 hours</span>
+              </div>
+              <div class="meta-row">
+                <span class="meta-label">TIMEZONE</span>
+                <span class="meta-value">${escapeHtml(CONFIG.timezoneLabel)}</span>
+              </div>
+              <div class="meta-row">
+                <span class="meta-label">DEADLINE</span>
+                <span class="meta-value">${escapeHtml(CONFIG.deadlineLabel)}</span>
+              </div>
+            </div>
+          </section>
+
+          ${isClosed ? renderClosed() : renderForm()}
+
+          <section class="summary-panel" id="summary-panel" hidden></section>
+
+          ${renderFooter()}
+        `;
+
+        populateLocalTimes();
+
+        const form = document.getElementById('availability-form');
+        if (form) {
+          form.addEventListener('submit', submitAvailability);
+        }
+
+        const totalsButton = document.getElementById('totals-button');
+        if (totalsButton) {
+          totalsButton.addEventListener('click', function () {
+            showSummary(true);
+          });
+        }
+      }
+
+      function renderTopbar() {
+        return `
+          <header class="topbar">
+            <div class="wordmark" aria-label="Factory">
+              FACTORY<span class="wordmark-mark">.</span>
+            </div>
+            <div class="security-badge">CONFIDENTIAL SCHEDULING</div>
+          </header>
+        `;
+      }
+
+      function renderForm() {
+        return `
+          <form id="availability-form" novalidate>
+            <section aria-labelledby="preferred-heading">
+              <div class="section-heading">
+                <div>
+                  <div class="section-label">01 / PREFERRED WINDOWS</div>
+                  <h2 id="preferred-heading">Mark every option.</h2>
+                </div>
+                <p class="section-description">
+                  All preferred windows run from 2:00–5:00 PM Pacific.
+                  Your local time appears below each window when it differs.
+                </p>
+              </div>
+              <div class="slot-list">
+                ${CONFIG.slots.map(renderSlot).join('')}
+              </div>
+            </section>
+
+            <section class="details-section" aria-labelledby="details-heading">
+              <div class="details-intro">
+                <div class="section-label">02 / CONTACT + ALTERNATIVES</div>
+                <h2 id="details-heading">Add the scheduling context.</h2>
+                <p>
+                  Submit once per board member or principal. If plans change, submit again
+                  with the same email — only the latest response counts.
+                </p>
+              </div>
+
+              <div class="form-grid">
+                <div class="two-column">
+                  ${renderTextField({
+                    id: 'full-name',
+                    label: 'YOUR NAME',
+                    type: 'text',
+                    autocomplete: 'name',
+                    placeholder: 'Full name',
+                    required: true,
+                  })}
+                  ${renderTextField({
+                    id: 'email',
+                    label: 'WORK EMAIL',
+                    type: 'email',
+                    autocomplete: 'email',
+                    placeholder: 'name@company.com',
+                    required: true,
+                  })}
+                </div>
+
+                ${renderTextField({
+                  id: 'principal',
+                  label: 'COORDINATING FOR',
+                  type: 'text',
+                  autocomplete: 'organization',
+                  placeholder: 'Board member or principal',
+                  required: true,
+                })}
+
+                <label class="field" for="other-availability">
+                  <span class="field-label">OTHER DATES + TIMES</span>
+                  <textarea
+                    id="other-availability"
+                    maxlength="600"
+                    placeholder="Example: November 17, 10:00 AM–1:00 PM ET; November 20 after 12:00 PM ET"
+                  ></textarea>
+                  <span class="field-help">
+                    Include your timezone. Only the organizer can see this field.
+                  </span>
+                </label>
+
+                <label class="field" for="notes">
+                  <span class="field-label">SCHEDULING NOTES</span>
+                  <textarea
+                    id="notes"
+                    maxlength="600"
+                    placeholder="Travel constraints, hard stops, or other context"
+                  ></textarea>
+                </label>
+
+                <div class="privacy-panel">
+                  <span class="privacy-mark" aria-hidden="true">[i]</span>
+                  <div class="privacy-copy">
+                    Responses are collected in a private Google Form visible only to
+                    Factory’s organizer. Respondents see anonymous totals only — names,
+                    emails, principals, alternate windows, and notes are never shown.
+                  </div>
+                </div>
+
+                <div class="form-actions">
+                  <button class="button" id="submit-button" type="submit">
+                    SUBMIT AVAILABILITY &gt;
+                  </button>
+                  <button class="button button-secondary" id="totals-button" type="button">
+                    VIEW TOTALS
+                  </button>
+                  <div class="status-copy" id="form-status" role="status" aria-live="polite"></div>
+                </div>
+              </div>
+            </section>
+          </form>
+        `;
+      }
+
+      function renderSlot(slot) {
+        return `
+          <article class="slot-card">
+            <div class="slot-index">
+              <span class="slot-sequence">${escapeHtml(slot.sequence)}</span>
+              <span class="slot-day">${escapeHtml(slot.dayLabel)}</span>
+            </div>
+            <div class="slot-date">
+              <h2>${escapeHtml(slot.shortDate)}</h2>
+              <div class="slot-time">${escapeHtml(slot.timeLabel)}</div>
+              <div
+                class="local-time"
+                data-start="${escapeAttribute(slot.startIso)}"
+                data-end="${escapeAttribute(slot.endIso)}"
+                aria-live="polite"
+              ></div>
+            </div>
+            <fieldset class="availability-options">
+              <legend>Availability for ${escapeHtml(slot.dateLabel)}</legend>
+              <input
+                class="choice-input"
+                id="${escapeAttribute(slot.id)}-available"
+                name="slot-${escapeAttribute(slot.id)}"
+                type="radio"
+                value="available"
+                required
+              >
+              <label class="choice-label" for="${escapeAttribute(slot.id)}-available">
+                AVAILABLE
+              </label>
+              <input
+                class="choice-input"
+                id="${escapeAttribute(slot.id)}-unavailable"
+                name="slot-${escapeAttribute(slot.id)}"
+                type="radio"
+                value="unavailable"
+                required
+              >
+              <label class="choice-label" for="${escapeAttribute(slot.id)}-unavailable">
+                UNAVAILABLE
+              </label>
+            </fieldset>
+          </article>
+        `;
+      }
+
+      function renderTextField(field) {
+        return `
+          <label class="field" for="${escapeAttribute(field.id)}">
+            <span class="field-label">
+              ${escapeHtml(field.label)}
+              ${field.required ? '<span class="required" aria-hidden="true">*</span>' : ''}
+            </span>
+            <input
+              id="${escapeAttribute(field.id)}"
+              type="${escapeAttribute(field.type)}"
+              autocomplete="${escapeAttribute(field.autocomplete)}"
+              placeholder="${escapeAttribute(field.placeholder)}"
+              ${field.required ? 'required' : ''}
+            >
+          </label>
+        `;
+      }
+
+      function renderClosed() {
+        return `
+          <section class="closed-panel">
+            <div class="section-label">POLL CLOSED</div>
+            <h2>Responses closed on ${escapeHtml(CONFIG.deadlineLabel)}.</h2>
+            <p>
+              The anonymous availability summary appears below.
+              Contact Factory’s organizer if a response needs to change.
+            </p>
+          </section>
+        `;
+      }
+
+      function renderFooter() {
+        return `
+          <footer class="site-footer">
+            <span>FACTORY BOARD OPERATIONS</span>
+            <span>ALL TIMES DEFAULT TO ${escapeHtml(CONFIG.timezoneLabel.toUpperCase())}</span>
+          </footer>
+        `;
+      }
+
+      function fetchTotals() {
+        return fetch('results.json?ts=' + Date.now(), { cache: 'no-store' })
+          .then(function (response) {
+            return response.ok ? response.json() : null;
+          })
+          .catch(function () {
+            return null;
+          });
+      }
+
+      function showSummary(announce) {
+        const panel = document.getElementById('summary-panel');
+        if (!panel) {
+          return;
+        }
+
+        if (!latestTotals) {
+          panel.innerHTML = `
+            <div class="summary-header">
+              <div>
+                <div class="section-label">CURRENT TOTALS</div>
+                <h2>Anonymous availability</h2>
+                <p>Totals are being compiled — check back shortly.</p>
+              </div>
+            </div>
+          `;
+        } else {
+          panel.innerHTML = renderSummary(latestTotals);
+        }
+
+        panel.hidden = false;
+        if (announce) {
+          panel.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }
+
+      function renderSummary(totals) {
+        const total = Number(totals.total) || 0;
+        const updated = totals.updated
+          ? 'UPDATED ' + formatUpdated(totals.updated)
+          : 'TOTALS REFRESH EVERY 30 MINUTES';
+
+        return `
+          <div class="summary-header">
+            <div>
+              <div class="section-label">${isClosed ? 'FINAL TOTALS' : 'CURRENT TOTALS'}</div>
+              <h2>Anonymous availability</h2>
+              <p>Names and scheduling notes are never shown here.</p>
+            </div>
+            <div>
+              <div class="summary-total">${total}</div>
+              <div class="summary-count">${total === 1 ? 'RESPONSE' : 'RESPONSES'}</div>
+              <div class="summary-updated">${escapeHtml(updated)}</div>
+            </div>
+          </div>
+          <div class="summary-list">
+            ${CONFIG.slots.map(function (slot) {
+              const tally = (totals.slots || []).find(function (entry) {
+                return entry.id === slot.id;
+              }) || { available: 0, total: 0 };
+              const available = Number(tally.available) || 0;
+              const slotTotal = Number(tally.total) || 0;
+              const percent = slotTotal > 0 ? Math.round((available / slotTotal) * 100) : 0;
+
+              return `
+                <div class="summary-row">
+                  <div class="summary-date">${escapeHtml(slot.dateLabel)}</div>
+                  <div
+                    class="summary-track"
+                    role="img"
+                    aria-label="${available} of ${slotTotal} available"
+                  >
+                    <div class="summary-fill" style="width:${percent}%"></div>
+                  </div>
+                  <div class="summary-count">
+                    ${available} / ${slotTotal} AVAILABLE
+                  </div>
+                </div>
+              `;
+            }).join('')}
+          </div>
+        `;
+      }
+
+      function formatUpdated(iso) {
+        try {
+          return (
+            new Intl.DateTimeFormat('en-US', {
+              month: 'short',
+              day: 'numeric',
+              hour: 'numeric',
+              minute: '2-digit',
+              timeZoneName: 'short',
+              timeZone: CONFIG.timezone,
+            })
+              .format(new Date(iso))
+              .toUpperCase() + ' — REFRESHES EVERY 30 MIN'
+          );
+        } catch (error) {
+          return 'REFRESHES EVERY 30 MIN';
+        }
+      }
+
+      function submitAvailability(event) {
+        event.preventDefault();
+        const form = event.currentTarget;
+        const status = document.getElementById('form-status');
+        const button = document.getElementById('submit-button');
+
+        if (!form.reportValidity()) {
+          status.textContent = 'Complete every required field and preferred window.';
+          status.dataset.state = 'error';
+          return;
+        }
+
+        const body = new URLSearchParams();
+        body.append(ENTRY.name, document.getElementById('full-name').value.trim());
+        body.append(ENTRY.email, document.getElementById('email').value.trim());
+        body.append(ENTRY.principal, document.getElementById('principal').value.trim());
+        body.append(ENTRY.other, document.getElementById('other-availability').value.trim());
+        body.append(ENTRY.notes, document.getElementById('notes').value.trim());
+
+        CONFIG.slots.forEach(function (slot) {
+          const selected = form.querySelector(
+            'input[name="slot-' + CSS.escape(slot.id) + '"]:checked'
+          );
+          body.append(
+            slot.entryId,
+            selected && selected.value === 'available' ? 'Available' : 'Unavailable'
+          );
+        });
+
+        button.disabled = true;
+        button.textContent = 'SUBMITTING';
+        status.textContent = 'Saving your response.';
+        status.dataset.state = '';
+
+        fetch(FORM_ACTION, {
+          method: 'POST',
+          mode: 'no-cors',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body: body.toString(),
+        })
+          .then(function () {
+            button.disabled = false;
+            button.textContent = 'SUBMIT AGAIN >';
+            status.textContent =
+              'Response recorded. Totals refresh every 30 minutes.';
+            status.dataset.state = 'success';
+            showSummary(true);
+          })
+          .catch(function () {
+            button.disabled = false;
+            button.textContent = 'SUBMIT AVAILABILITY >';
+            status.textContent =
+              'Could not reach the form. Check your connection and try again.';
+            status.dataset.state = 'error';
+          });
+      }
+
+      function populateLocalTimes() {
+        let browserTimezone = '';
+
+        try {
+          browserTimezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+        } catch (error) {
+          return;
+        }
+
+        if (!browserTimezone || browserTimezone === CONFIG.timezone) {
+          return;
+        }
+
+        document.querySelectorAll('.local-time').forEach(function (element) {
+          const start = new Date(element.dataset.start);
+          const end = new Date(element.dataset.end);
+          const dateFormatter = new Intl.DateTimeFormat(undefined, {
+            month: 'short',
+            day: 'numeric',
+            hour: 'numeric',
+            minute: '2-digit',
+            timeZoneName: 'short',
+          });
+          const timeFormatter = new Intl.DateTimeFormat(undefined, {
+            hour: 'numeric',
+            minute: '2-digit',
+            timeZoneName: 'short',
+          });
+
+          element.textContent =
+            'YOUR TIME: ' +
+            dateFormatter.format(start).toUpperCase() +
+            '–' +
+            timeFormatter.format(end).toUpperCase();
+        });
+      }
+
+      function escapeHtml(value) {
+        return String(value)
+          .replace(/&/g, '&amp;')
+          .replace(/</g, '&lt;')
+          .replace(/>/g, '&gt;')
+          .replace(/"/g, '&quot;')
+          .replace(/'/g, '&#039;');
+      }
+
+      function escapeAttribute(value) {
+        return escapeHtml(value);
+      }
+    </script>
+  </body>
+</html>
